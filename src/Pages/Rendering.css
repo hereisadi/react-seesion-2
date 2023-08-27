@@ -1,0 +1,9 @@
+.mydiv2{
+    width: 30vw;
+    height: 30vw;
+    background-color: red;
+}
+
+.hiddendiv{
+    display: none;
+}
