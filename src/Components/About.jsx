@@ -4,6 +4,7 @@ const About = () => {
     useEffect(() => {
         document.title = "About page"
     })
+
     return (
 
         <div>
