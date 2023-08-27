@@ -1,8 +1,26 @@
-// import React from 'react'
+import { useState } from 'react'
 import { info } from '../Components/Data'
+import './Rendering.css'
 const RenderingList = () => {
     console.log(info[1]["items"][1]["name"])
     // console.log()
+
+    const [count, setCount] = useState(0)
+
+    const [hide, setHide] = useState(false)
+
+    const handleClick = () => {
+        setCount(count + 1)
+    }
+
+    const handleDecrease = () => {
+        setCount(count - 1)
+    }
+
+    const handleClickDiv = () => {
+        setHide(prev => !prev)
+    }
+
     return (
         <>
             {info.map((data) => {
@@ -22,6 +40,16 @@ const RenderingList = () => {
                     </div>
                 )
             })}
+            <br /><br />
+
+            {count}
+            <button onClick={handleClick}>increment me</button>
+            <button onClick={handleDecrease}>decrement me</button>
+
+            <div className={`mydiv2 ${hide ? "hiddendiv" : ""}`} ></div>
+            <button onClick={handleClickDiv}>
+                {hide ? "Show above div" : "Hide above div"}
+            </button>
         </>
     )
 }
